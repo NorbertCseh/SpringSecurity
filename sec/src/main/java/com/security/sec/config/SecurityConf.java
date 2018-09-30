@@ -2,7 +2,6 @@ package com.security.sec.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,8 +13,8 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureAuth(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("norbi").password("{noop}pass").roles("USER").and().withUser("admin")
-                .password("{noop}pass").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("norbi").password("pass").roles("USER").and().withUser("admin")
+                .password("pass").roles("ADMIN");
     }
 
     @Override
